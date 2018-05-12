@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">QNBleDemo</string>
+    <string name="scan">扫描</string>
+    <string name="stop">停止</string>
+    <string name="user_id_explain">设置用户的资料,计算体脂率时会需要</string>
+    <string name="user_gender_explain">男的为"male",女的为"female"</string>
+    <string name="user_height_explain">单位是cm,范围为40~240cm</string>
+    <string name="user_birthday_explain">只支持10岁以上80岁以下,对于10岁以下的,则只有体重和BMI数据是有效的</string>
+    <string name="ble_scan_explain">选择"首次"时,每个设备单次扫描只返回一次,选择"每次"时,每个设备单次扫描可能会回调多次,不过信号强度会不同</string>
+    <string name="user_unit_explain">kg 公斤 默认值\nlb 磅,所有秤都能支持这个单位\n斤,秤端如果不支持,则会显示kg\nst 英石,如果秤端不支持会显示lb</string>
+    <string name="cancel">取消</string>
+    <string name="sure">确定</string>
+    <string name="RegisterViewController_women">女</string>
+    <string name="RegisterViewController_man">男</string>
+    <string name="RegisterViewController_lowAge10">您的年龄小于10岁,测试时您无法获取准确的测量数据</string>
+    <string name="date_format_day">yyyy-MM-dd</string>
+    <string name="register_ok">确认</string>
+</resources>
