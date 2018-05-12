@@ -3,7 +3,6 @@
 ## SDK文件说明
 ### 统一引入
 #### 导入demo项目的lib中的jar文件(yolanda-sdk-xxx.jar)和对应的so文件
-该.h文件包含所有的头文件信息
 
 ### 操作
 #### QNBleApi
@@ -42,24 +41,24 @@
 
 ## SDK调用步骤
 
-1. 初始化SDK `+ (QNBleApi *)initSdk;`
-2. 开启扫描 `+ (QNBleApi *)startBleDeviceDiscovery`
-	+ 开启扫描需要先设置进行扫描设备的监听 `- (QNBleApi *)setBleDeviceDiscoveryListener`
-	+ 开启扫描需要配置扫描对象QNConfig,可以新建对象或获取上次设置的对象 `- (QNBleApi *)getConfig`
+1. 初始化SDK `(QNBleApi)initSdk`
+2. 开启扫描 `(QNBleApi)startBleDeviceDiscovery`
+	+ 开启扫描需要先设置进行扫描设备的监听 `(QNBleApi)setBleDeviceDiscoveryListener`
+	+ 开启扫描需要配置扫描对象QNConfig,可以新建对象或获取上次设置的对象 `(QNBleApi)getConfig`
 3. 设置扫描配置 （步骤2中的设置对象）
- 	+ 获取配置信息 `- (QNConfig *)getConfig;`
+ 	+ 获取配置信息 `(QNConfig *)new QNConfig()`
 	+ 设置是否只扫描开机的秤 `onlyScreenOn`
 	+ 设置扫描到秤时是否返回多次 `allowDuplicates`
 	+ 设置扫描的时间 `duration`
 	+ 设置秤端显示的单位 `unit`
-4.设置连接状态的监听 `+ (QNBleApi *)setBleConnectionChangeListener`
-5.设置测量数据的监听 `+ (QNBleApi *)setDataListener`
-6. 构建连接秤的用户对象 `- (QNBleApi *)buildUser:(String *)userId height:(int)height gender:(String *)gender birthday:(Date *)birthday callback:(QNResultCallback)callback`
-7. 连接设备 `- (void)connectDevice:(QNBleDevice *)device user:(QNUser *)user callback:(QNResultCallback)callback;`
+4. 设置连接状态的监听 `(QNBleApi)setBleConnectionChangeListener`
+5. 设置测量数据的监听 `(QNBleApi)setDataListener`
+6. 构建连接秤的用户对象 `(QNBleApi)buildUser:String userId,int height,String gender,Date birthday,QNResultCallback callback`
+7. 连接设备 `connectDevice:QNBleDevice device,QNUser user,QNResultCallback callback`
 
 
 
 ## 注意事项
 - 必须在清单文件中申请蓝牙权限、位置权限、网络权限（离线SDK不需要）
 - 必须在清单文件中添加SDK需要使用到的服务：com.qingniu.qnble.scanner.BleScanService，com.qingniu.scale.ble.ScaleBleService
-- 6.0以上需要动态申请危险权限，需要开发者自己申请
+- targetSdkVersion 在23及以上，需要先获取定位权限，才能扫描到设备，需要开发者自己申请
