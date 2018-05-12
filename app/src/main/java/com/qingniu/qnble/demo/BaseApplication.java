@@ -19,7 +19,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        String encryptPath = "file:///android_asset/testEncrypt.txt";
+        String encryptPath = "file:///android_asset/123456789.qn";
         QNBleApi mQNBleApi = QNBleApi.getInstance(this);
         mQNBleApi.initSdk("123456789", encryptPath, new QNResultCallback() {
             @Override
