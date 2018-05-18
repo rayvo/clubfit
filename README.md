@@ -31,7 +31,7 @@
 #### QNScaleData
 测量结果数据对象
 #### QNScaleStoreData
-存储数据对象,可以通过
+存储数据对象,可以通过`(QNScaleStoreData)generateScaleData` 获取`QNScaleData`对象
 #### QNScaleItemData
 每个指标的详细数据对象
 
@@ -48,7 +48,7 @@
 	+ 开启扫描需要先设置进行扫描设备的监听 `(QNBleApi)setBleDeviceDiscoveryListener`
 	+ 开启扫描需要配置扫描对象QNConfig,可以新建对象或获取上次设置的对象 `(QNBleApi)getConfig`
 3. 设置扫描配置 （步骤2中的设置对象）
- 	+ 获取配置信息 `(QNConfig *)new QNConfig()`
+ 	+ 获取配置信息 `(QNConfig)new QNConfig()`
 	+ 设置是否只扫描开机的秤 `onlyScreenOn`
 	+ 设置扫描到秤时是否返回多次 `allowDuplicates`
 	+ 设置扫描的时间 `duration`
