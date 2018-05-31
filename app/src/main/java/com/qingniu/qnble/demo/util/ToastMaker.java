@@ -37,19 +37,18 @@ public class ToastMaker {
 
     static TextView newTv(Context context) {
         TextView textView = new TextView(context);
-        textView.setPaddingRelative(UIUtils.dpToPx(5), UIUtils.dpToPx(5), UIUtils.dpToPx(5), UIUtils.dpToPx(5));
+        textView.setPaddingRelative(UIUtils.dpToPx(context,5), UIUtils.dpToPx(context,5), UIUtils.dpToPx(context,5), UIUtils.dpToPx(context,5));
         textView.setGravity(Gravity.CENTER);
 
         GradientDrawable gd = new GradientDrawable();
         gd.setColor(0xFF5d5b5b);
-        gd.setCornerRadius(UIUtils.dpToPx(5));
+        gd.setCornerRadius(UIUtils.dpToPx(context,5));
         textView.setBackground(gd);
 
         textView.setTextSize(14);
         textView.setTextColor(Color.WHITE);
         return textView;
     }
-
 
 
     public static void show(Context context, int textResId) {

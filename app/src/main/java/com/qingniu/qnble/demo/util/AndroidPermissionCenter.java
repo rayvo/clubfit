@@ -21,9 +21,9 @@ public class AndroidPermissionCenter {
             "android.permission.ACCESS_COARSE_LOCATION",
             "android.permission.ACCESS_FINE_LOCATION"};
 
-    public static int REQUEST_EXTERNAL_STORAGE = 20000;
+    public static int REQUEST_EXTERNAL_STORAGE = 201;
 
-    //TODO 需要说明 API>=23时才需要判断权限，扫描时再判断权限
+    //API>=23时才需要判断权限，扫描时再判断权限
     public static void verifyPermissions(Activity activity) {
         //判断是否已经赋予权限
         if (ContextCompat.checkSelfPermission(activity,

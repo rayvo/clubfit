@@ -3,9 +3,6 @@ package com.qingniu.qnble.demo;
 import android.app.Application;
 import android.util.Log;
 
-import com.kitnew.ble.utils.EncryptUtils;
-import com.qingniu.qnble.demo.util.FileUtils;
-import com.qingniu.qnble.utils.QNLogUtils;
 import com.yolanda.health.qnblesdk.listen.QNResultCallback;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
 

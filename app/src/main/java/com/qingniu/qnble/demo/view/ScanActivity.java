@@ -23,6 +23,7 @@ import com.qingniu.qnble.demo.bean.Config;
 import com.qingniu.qnble.demo.bean.User;
 import com.qingniu.qnble.demo.util.AndroidPermissionCenter;
 import com.qingniu.qnble.demo.util.UserConst;
+import com.qingniu.qnble.utils.QNLogUtils;
 import com.yolanda.health.qnblesdk.listen.QNBleDeviceDiscoveryListener;
 import com.yolanda.health.qnblesdk.listen.QNResultCallback;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
@@ -127,12 +128,12 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
 
             @Override
             public void onStartScan() {
-
+                Log.d("ScanActivity","onStartScan");
             }
 
             @Override
             public void onStopScan() {
-
+                Log.d("ScanActivity","onStopScan");
             }
         });
 
