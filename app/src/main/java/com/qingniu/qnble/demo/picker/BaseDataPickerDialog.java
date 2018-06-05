@@ -172,7 +172,7 @@ public class BaseDataPickerDialog extends Dialog implements NumberPicker.OnValue
                 numberPicker.setBackgroundID(0);
             }
 
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, UIUtils.dpToPx(200));
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, UIUtils.dpToPx(getContext(),200));
             lp.weight = 1;
             picker.setLayoutParams(lp);
 

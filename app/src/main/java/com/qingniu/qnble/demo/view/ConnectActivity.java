@@ -64,8 +64,6 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
     @BindView(R.id.listView)
     ListView mListView;
 
-    private String[] bodyShapeList = new String[]{"无", "隐形肥胖型", "运动不足型", "偏瘦型", "标准型", "偏瘦肌肉型", "肥胖型", "偏胖型", "标准肌肉型", "非常肌肉型"};
-
     private QNBleDevice mBleDevice;
     private List<QNScaleItemData> mDatas = new ArrayList<>();
     private QNBleApi mQNBleApi;
@@ -344,7 +342,6 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
                     mDatas.clear();
                     listAdapter.notifyDataSetChanged();
                     this.doConnect();
-                    initUserData();
                 }
                 break;
             case R.id.back_tv:
@@ -361,7 +358,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
         mQNBleApi.connectDevice(mBleDevice, creatQNuser(), new QNResultCallback() {
             @Override
             public void onResult(int code, String msg) {
-                Log.d("ConnectActivity", "连接设备22返回:" + msg);
+                Log.d("ConnectActivity", "连接设备返回:" + msg);
                 if (code == 0) {
                     mIsConnected = true;
                 }

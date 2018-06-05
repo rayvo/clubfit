@@ -1,6 +1,6 @@
 # 轻牛蓝牙Android SDK 
 
-## 最新版本 `v0.2.0` [下载地址](https://github.com/YolandaQingniu/sdk-android-demo/releases/download/v0.2.0/qnsdk-0.2.0-Android.zip)
+## 最新版本 `v0.2.1` [下载地址](https://github.com/YolandaQingniu/sdk-android-demo/releases/download/v0.2.1/qnsdk-0.2.1-Android.zip)
 
 ## SDK文件说明
 ### 统一引入
@@ -62,5 +62,25 @@
 
 ## 注意事项
 - 必须在清单文件中申请蓝牙权限、位置权限、网络权限（离线SDK不需要）
+- SDK中使用到了v4包的资源，开发者项目中需要引入v4包的依赖
 - 必须在清单文件中添加SDK需要使用到的服务：com.qingniu.qnble.scanner.BleScanService，com.qingniu.scale.ble.ScaleBleService
 - targetSdkVersion 在23及以上，需要先获取定位权限，才能扫描到设备，需要开发者自己申请
+
+
+## 常见问题
+
+1. 初始化提示appid错误
+    + 检查初始化文件和使用的appid是否匹配
+    + 检查引入的SDK是否是最新的
+2. 扫描设备调用成功，但是一直没有设备回调
+    + 检查所扫描的设备，是否已经被其他人连接
+    + 部分手机需要开启GPS才能扫描到设备，请检查手机GPS是否开启
+3. 连接设备一直无法成功或者成功后很快就断开连接
+    + 检查设备是否被其他人连接了
+    + 在系统蓝牙中查看是否当前连接的设备已经被配对,如果已经配对，需要取消配对
+    + 部分手机需要先扫描才能连接成功，先扫描设备再进行连接
+4. 获取到的指标与和商务洽谈的指标数不同
+    + 先检查出现问题的设备，扫描时显示的名称是否正确
+    + 心率秤无论是否开放了心率指标，SDK都会下发心率指标
+
+**`提示`**：遇到无法定位的问题，希望开发者能第一时间提供日志，以便我们尽快找到问题    

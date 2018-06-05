@@ -147,7 +147,7 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
         mQnConfig.setUnit(mConfig.getUnit());
         mQnConfig.setOnlyScreenOn(mConfig.isOnlyScreenOn());
 
-        mScanAppid.setText("APP_ID : " + mUser.getUserId());
+        mScanAppid.setText("UserId : " + mUser.getUserId());
     }
 
     private void initIntent() {
