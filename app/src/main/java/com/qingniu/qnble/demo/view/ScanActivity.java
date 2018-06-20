@@ -22,8 +22,8 @@ import com.qingniu.qnble.demo.SettingActivity;
 import com.qingniu.qnble.demo.bean.Config;
 import com.qingniu.qnble.demo.bean.User;
 import com.qingniu.qnble.demo.util.AndroidPermissionCenter;
+import com.qingniu.qnble.demo.util.ToastMaker;
 import com.qingniu.qnble.demo.util.UserConst;
-import com.qingniu.qnble.utils.QNLogUtils;
 import com.yolanda.health.qnblesdk.listen.QNBleDeviceDiscoveryListener;
 import com.yolanda.health.qnblesdk.listen.QNResultCallback;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
@@ -58,6 +58,7 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
     private User mUser;
     private Config mConfig;
     private QNConfig mQnConfig;
+    private boolean isScanning;
 
     public static Intent getCallIntent(Context context, User user, Config mConfig) {
         return new Intent(context, ScanActivity.class)
@@ -87,12 +88,14 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
                 convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_device, null);
             }
             TextView nameTv = (TextView) convertView.findViewById(R.id.nameTv);
+            TextView modelTv = (TextView) convertView.findViewById(R.id.modelTv);
             TextView macTv = (TextView) convertView.findViewById(R.id.macTv);
             TextView rssiTv = (TextView) convertView.findViewById(R.id.rssiTv);
 
             QNBleDevice scanResult = devices.get(position);
 
             nameTv.setText(scanResult.getName());
+            modelTv.setText(scanResult.getInternalModel());
             macTv.setText(scanResult.getMac());
             rssiTv.setText(String.valueOf(scanResult.getRssi()));
 
@@ -128,12 +131,19 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
 
             @Override
             public void onStartScan() {
-                Log.d("ScanActivity","onStartScan");
+                Log.d("ScanActivity", "onStartScan");
+                isScanning = true;
             }
 
             @Override
             public void onStopScan() {
-                Log.d("ScanActivity","onStopScan");
+                Log.d("ScanActivity", "onStopScan");
+                isScanning = false;
+            }
+
+            @Override
+            public void onScanFail(int code) {
+                Log.d("ScanActivity", "onScanFail:" + code);
             }
         });
 
@@ -218,13 +228,21 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
                 finish();
                 break;
             case R.id.scanBtn:
-                this.devices.clear();
+                if (!isScanning) {
+                    this.devices.clear();
 
-                listAdapter.notifyDataSetChanged();
-                startScan();
+                    listAdapter.notifyDataSetChanged();
+                    startScan();
+                } else {
+                    ToastMaker.show(this, "正在扫描");
+                }
                 break;
             case R.id.stopBtn:
-                stopScan();
+                if (isScanning) {
+                    stopScan();
+                } else {
+                    ToastMaker.show(this, "已经停止扫描");
+                }
                 break;
         }
     }

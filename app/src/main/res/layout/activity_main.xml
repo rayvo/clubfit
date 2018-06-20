@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp">
+
         <TextView
+            android:id="@+id/scan_measuring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测量"
             android:layout_centerInParent="true"
-            android:textSize="16sp"
-            android:id="@+id/scan_measuring"/>
+            android:text="测量"
+            android:textSize="16sp"/>
+
         <TextView
+            android:id="@+id/scan_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="设置"
             android:layout_centerVertical="true"
-            android:id="@+id/scan_setting"
             android:layout_marginEnd="10dp"
+            android:text="设置"
             android:textSize="16sp"/>
     </RelativeLayout>
+
     <TextView
+        android:id="@+id/scan_appid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="APP_ID : 123456789"
-        android:id="@+id/scan_appid"
-        android:layout_margin="12dp"/>
+        android:layout_margin="12dp"
+        android:text="APP_ID : 123456789"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,18 +46,82 @@
             android:id="@+id/scanBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/scan" />
+            android:text="@string/scan"/>
+
         <Button
             android:id="@+id/stopBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stop" />
+            android:text="@string/stop"/>
+
         <TextView
+            android:id="@+id/scan_measuring_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="点击连接设备"
             android:layout_marginStart="10dp"
-            android:id="@+id/scan_measuring_info"/>
+            android:text="点击连接设备"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lvHeadLay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:minHeight="50dp"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:text="名称"/>
+
+        <TextView
+            android:id="@+id/modelTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:text="型号"/>
+
+        <TextView
+            android:id="@+id/macTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_weight="4"
+            android:gravity="center_horizontal"
+            android:text="mac地址"/>
+
+        <TextView
+            android:id="@+id/rssiTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="强度"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/system_item_arrow"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 
@@ -61,5 +129,5 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"/>
 </LinearLayout>
