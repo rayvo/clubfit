@@ -1,10 +1,13 @@
 # 轻牛蓝牙Android SDK 
 
-## 最新版本 `v0.2.2` [下载地址](https://github.com/YolandaQingniu/sdk-android-demo/releases/download/v0.2.2/qnsdk-0.2.2-Android.zip)
+## 最新版本 `v0.2.3` [下载地址](https://github.com/YolandaQingniu/sdk-android-demo/releases/download/v0.2.3/qnsdk-0.2.3-Android.zip)
 
 ## SDK文件说明
 ### 统一引入
 #### 导入demo项目的lib中的jar文件(qnsdk-xxx.jar)和对应的so文件
+
+### 混淆配置(proguard-rules)
++ -keep class com.qingniu.scale.model.BleScaleData{*;}
 
 ### 操作
 #### QNBleApi
