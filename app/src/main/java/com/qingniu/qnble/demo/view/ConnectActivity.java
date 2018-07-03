@@ -19,9 +19,9 @@ import com.qingniu.qnble.demo.bean.User;
 import com.qingniu.qnble.demo.util.UserConst;
 import com.yolanda.health.qnblesdk.constant.QNIndicator;
 import com.yolanda.health.qnblesdk.constant.QNScaleStatus;
-import com.yolanda.health.qnblesdk.listen.QNBleConnectionChangeListener;
-import com.yolanda.health.qnblesdk.listen.QNDataListener;
-import com.yolanda.health.qnblesdk.listen.QNResultCallback;
+import com.yolanda.health.qnblesdk.listener.QNBleConnectionChangeListener;
+import com.yolanda.health.qnblesdk.listener.QNDataListener;
+import com.yolanda.health.qnblesdk.listener.QNResultCallback;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
 import com.yolanda.health.qnblesdk.out.QNBleDevice;
 import com.yolanda.health.qnblesdk.out.QNScaleData;
@@ -29,7 +29,6 @@ import com.yolanda.health.qnblesdk.out.QNScaleItemData;
 import com.yolanda.health.qnblesdk.out.QNScaleStoreData;
 import com.yolanda.health.qnblesdk.out.QNUser;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 

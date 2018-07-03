@@ -19,7 +19,7 @@ import com.qingniu.qnble.demo.picker.HeightPickerDialog;
 import com.qingniu.qnble.demo.util.DateUtils;
 import com.qingniu.qnble.demo.util.ToastMaker;
 import com.qingniu.qnble.demo.view.ScanActivity;
-import com.yolanda.health.qnblesdk.listen.QNResultCallback;
+import com.yolanda.health.qnblesdk.listener.QNResultCallback;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
 
 import java.util.Date;

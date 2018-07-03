@@ -1,6 +1,6 @@
 # 轻牛蓝牙Android SDK 
 
-## 最新版本 `v0.2.3` [下载地址](https://github.com/YolandaQingniu/sdk-android-demo/releases/download/v0.2.3/qnsdk-0.2.3-Android.zip)
+## 最新版本 `v0.2.4` [下载地址](https://github.com/YolandaQingniu/sdk-android-demo/releases/download/v0.2.4/qnsdk-0.2.4-Android.zip)
 
 ## SDK文件说明
 ### 统一引入
@@ -65,6 +65,7 @@
 
 ## 注意事项
 - 必须在清单文件中申请蓝牙权限、位置权限、网络权限（离线SDK不需要）
+- SDK最低支持API版本为18
 - SDK中使用到了v4包的资源，开发者项目中需要引入v4包的依赖
 - 必须在清单文件中添加SDK需要使用到的服务：com.qingniu.qnble.scanner.BleScanService，com.qingniu.scale.ble.ScaleBleService
 - targetSdkVersion 在23及以上，需要先获取定位权限，才能扫描到设备，需要开发者自己申请

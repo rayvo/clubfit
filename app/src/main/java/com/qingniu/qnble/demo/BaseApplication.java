@@ -3,7 +3,7 @@ package com.qingniu.qnble.demo;
 import android.app.Application;
 import android.util.Log;
 
-import com.yolanda.health.qnblesdk.listen.QNResultCallback;
+import com.yolanda.health.qnblesdk.listener.QNResultCallback;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
 
 /**
