@@ -72,8 +72,6 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
     private int mHeight = 172; //用户身高
     private Date mBirthday = null; //用户生日
 
-    private boolean mIsAllowDuplicates = false; //蓝牙扫描是否允许返回多次
-    private int mUnit = 0; //单位
     private User mUser;
     private QNBleApi mQnBleApi;
 
@@ -125,28 +123,22 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
             case R.id.ble_scan_first_time:
                 //每个设备单次扫描只返回一次
                 mBleConfig.setAllowDuplicates(false);
-                mIsAllowDuplicates = false;
                 break;
             case R.id.ble_scan_every_time:
                 //每个设备单次扫描回调多次,不过信号强度不同
                 mBleConfig.setAllowDuplicates(true);
-                mIsAllowDuplicates = true;
                 break;
             case R.id.user_unit_kg:
-                mBleConfig.setUnit(0);
-                mUnit = 0;
+                mBleConfig.setUnit(QNBleApi.WEIGHT_UNIT_KG);
                 break;
             case R.id.user_unit_lb:
-                mBleConfig.setUnit(1);
-                mUnit = 1;
+                mBleConfig.setUnit(QNBleApi.WEIGHT_UNIT_LB);
                 break;
             case R.id.user_unit_jin:
-                mBleConfig.setUnit(2);
-                mUnit = 2;
+                mBleConfig.setUnit(QNBleApi.WEIGHT_UNIT_JIN);
                 break;
             case R.id.user_unit_st:
-                mBleConfig.setUnit(3);
-                mUnit = 3;
+                mBleConfig.setUnit(QNBleApi.WEIGHT_UNIT_ST);
                 break;
         }
 

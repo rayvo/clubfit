@@ -150,12 +150,18 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void initData() {
-//        mQnConfig = mQNBleApi.getConfig();//获取上次设置的对象
-        mQnConfig = new QNConfig();
+        mQnConfig = mQNBleApi.getConfig();//获取上次设置的对象,未设置获取的是默认对象
         mQnConfig.setAllowDuplicates(mConfig.isAllowDuplicates());
         mQnConfig.setDuration(mConfig.getDuration());
         mQnConfig.setUnit(mConfig.getUnit());
         mQnConfig.setOnlyScreenOn(mConfig.isOnlyScreenOn());
+        //设置扫描对象
+        mQnConfig.save(new QNResultCallback() {
+            @Override
+            public void onResult(int i, String s) {
+                Log.d("ScanActivity", "initData:" + s);
+            }
+        });
 
         mScanAppid.setText("UserId : " + mUser.getUserId());
     }
@@ -187,7 +193,7 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     private void startScan() {
-        mQNBleApi.startBleDeviceDiscovery(mQnConfig, new QNResultCallback() {
+        mQNBleApi.startBleDeviceDiscovery(new QNResultCallback() {
             @Override
             public void onResult(int code, String msg) {
                 Log.d("ScanActivity", "code:" + code + ";msg:" + msg);

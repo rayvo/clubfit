@@ -1,6 +1,6 @@
 # 轻牛蓝牙Android SDK 
 
-## 最新版本 `v0.2.5` [下载地址](https://github.com/YolandaQingniu/sdk-android-demo/releases/download/v0.2.5/qnsdk-0.2.5-Android.zip)
+## 最新版本 `v0.3.0` [下载地址](https://github.com/YolandaQingniu/sdk-android-demo/releases/download/v0.3.0/qnsdk-0.3.0-Android.zip)
 
 ## SDK文件说明
 ### 统一引入
@@ -49,9 +49,8 @@
 1. 初始化SDK `(QNBleApi)initSdk`
 2. 开启扫描 `(QNBleApi)startBleDeviceDiscovery`
 	+ 开启扫描需要先设置进行扫描设备的监听 `(QNBleApi)setBleDeviceDiscoveryListener`
-	+ 开启扫描需要配置扫描对象QNConfig,可以新建对象或获取上次设置的对象 `(QNBleApi)getConfig`
-3. 设置扫描配置 （步骤2中的设置对象）
- 	+ 获取配置信息 `(QNConfig)new QNConfig()`
+3. 设置扫描配置 （未设置对象时，使用默认配置）
+ 	+ 获取配置信息 `(QNBleApi)getConfig()`
 	+ 设置是否只扫描开机的秤 `onlyScreenOn`
 	+ 设置扫描到秤时是否返回多次 `allowDuplicates`
 	+ 设置扫描的时间 `duration`
