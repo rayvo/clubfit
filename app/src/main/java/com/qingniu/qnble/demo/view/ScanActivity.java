@@ -95,7 +95,7 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
             QNBleDevice scanResult = devices.get(position);
 
             nameTv.setText(scanResult.getName());
-            modelTv.setText(scanResult.getInternalModel());
+            modelTv.setText(scanResult.getModeId());
             macTv.setText(scanResult.getMac());
             rssiTv.setText(String.valueOf(scanResult.getRssi()));
 
