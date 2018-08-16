@@ -18,7 +18,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         String encryptPath = "file:///android_asset/123456789.qn";
-//        QNLogUtils.setLogEnable(true);//设置日志打印开关，默认关闭
+        QNLogUtils.setLogEnable(BuildConfig.DEBUG);//设置日志打印开关，默认关闭
 //        QNLogUtils.setWriteEnable(true);//设置日志写入文件开关，默认关闭
         QNBleApi mQNBleApi = QNBleApi.getInstance(this);
         mQNBleApi.initSdk("123456789", encryptPath, new QNResultCallback() {

@@ -19,7 +19,6 @@ import com.qingniu.qnble.demo.picker.HeightPickerDialog;
 import com.qingniu.qnble.demo.util.DateUtils;
 import com.qingniu.qnble.demo.util.ToastMaker;
 import com.qingniu.qnble.demo.view.ScanActivity;
-import com.yolanda.health.qnblesdk.listener.QNResultCallback;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
 
 import java.util.Date;
@@ -65,8 +64,13 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
     @BindView(R.id.user_unit_grp)
     RadioGroup mUserUnitGrp;
     @BindView(R.id.btn_sure)
-
     Button mSure;
+
+    @BindView(R.id.scan_timeEt)
+    EditText mScanEt;
+    @BindView(R.id.scan_out_timeEt)
+    EditText mScanOutEt;
+
     private Config mBleConfig; //蓝牙配置对象
     private String mGender = "male";//用户性别
     private int mHeight = 172; //用户身高
@@ -129,16 +133,16 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
                 mBleConfig.setAllowDuplicates(true);
                 break;
             case R.id.user_unit_kg:
-                mBleConfig.setUnit(QNBleApi.WEIGHT_UNIT_KG);
+                mBleConfig.setUnit(0);
                 break;
             case R.id.user_unit_lb:
-                mBleConfig.setUnit(QNBleApi.WEIGHT_UNIT_LB);
+                mBleConfig.setUnit(1);
                 break;
             case R.id.user_unit_jin:
-                mBleConfig.setUnit(QNBleApi.WEIGHT_UNIT_JIN);
+                mBleConfig.setUnit(2);
                 break;
             case R.id.user_unit_st:
-                mBleConfig.setUnit(QNBleApi.WEIGHT_UNIT_ST);
+                mBleConfig.setUnit(3);
                 break;
         }
 
@@ -184,6 +188,22 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
                 break;
             case R.id.btn_sure:
                 String userId = mUserIdEdt.getText().toString().trim();
+                int scanTime = 0;
+                try {
+                    scanTime = Integer.parseInt(mScanEt.getText().toString().trim());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    ToastMaker.show(this, "请填写正确的扫描时间");
+                    return;
+                }
+                long scanOutTime = 0L;
+                try {
+                    scanOutTime = Long.parseLong(mScanOutEt.getText().toString().trim());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    ToastMaker.show(this, "请填写正确的扫描超时时间");
+                    return;
+                }
 
                 if (userId.isEmpty()) {
                     ToastMaker.show(this, "用户id不能为空");
@@ -205,19 +225,15 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
                     return;
                 }
 
-                mQnBleApi.buildUser(userId, mHeight, mGender, mBirthday, new QNResultCallback() {
-                    @Override
-                    public void onResult(int code, String msg) {
-                        ToastMaker.show(SettingActivity.this, "设置用户信息:" + msg);
-                    }
-                });
-
                 mUser.setUserId(userId);
                 mUser.setHeight(mHeight);
                 mUser.setGender(mGender);
                 mUser.setBirthDay(mBirthday);
 
-                startActivity(ScanActivity.getCallIntent(this, mUser,mBleConfig));
+                mBleConfig.setDuration(scanTime);
+                mBleConfig.setScanOutTime(scanOutTime);
+
+                startActivity(ScanActivity.getCallIntent(this, mUser, mBleConfig));
                 finish();
                 break;
         }

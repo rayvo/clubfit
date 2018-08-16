@@ -47,6 +47,19 @@ public class Config implements Parcelable {
 
     private int unit;
 
+    public long getScanOutTime() {
+        return scanOutTime;
+    }
+
+    public void setScanOutTime(long scanOutTime) {
+        this.scanOutTime = scanOutTime;
+    }
+
+    private long scanOutTime=6000;
+
+    public Config() {
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -58,9 +71,7 @@ public class Config implements Parcelable {
         dest.writeByte(this.allowDuplicates ? (byte) 1 : (byte) 0);
         dest.writeInt(this.duration);
         dest.writeInt(this.unit);
-    }
-
-    public Config() {
+        dest.writeLong(this.scanOutTime);
     }
 
     protected Config(Parcel in) {
@@ -68,9 +79,10 @@ public class Config implements Parcelable {
         this.allowDuplicates = in.readByte() != 0;
         this.duration = in.readInt();
         this.unit = in.readInt();
+        this.scanOutTime = in.readLong();
     }
 
-    public static final Parcelable.Creator<Config> CREATOR = new Parcelable.Creator<Config>() {
+    public static final Creator<Config> CREATOR = new Creator<Config>() {
         @Override
         public Config createFromParcel(Parcel source) {
             return new Config(source);

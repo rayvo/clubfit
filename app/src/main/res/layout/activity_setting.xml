@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,13 +14,13 @@
             android:layout_height="45dp"
             android:gravity="center"
             android:text="设置"
-            android:textSize="20sp" />
+            android:textSize="20sp"/>
 
         <TextView
             style="@style/user_big_text"
-            android:text="用户资料" />
+            android:text="用户资料"/>
 
-        <TextView style="@style/divide_line" />
+        <TextView style="@style/divide_line"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,12 +34,12 @@
                 <TextView
                     android:id="@+id/user_name_explain"
                     style="@style/user_small_text"
-                    android:text="用户id" />
+                    android:text="用户id"/>
 
                 <ImageView
                     android:id="@+id/user_id_arrow"
                     style="@style/user_arrow_image"
-                    android:src="@drawable/system_item_arrow" />
+                    android:src="@drawable/system_item_arrow"/>
 
                 <EditText
                     android:id="@+id/user_id_edt"
@@ -51,17 +51,17 @@
                     android:layout_toStartOf="@+id/user_id_arrow"
                     android:background="@drawable/edittext_background"
                     android:inputType="phone"
-                    android:text="123456789" />
+                    android:text="123456789"/>
 
 
             </RelativeLayout>
 
             <TextView
                 style="@style/user_explain_text"
-                android:text="@string/user_id_explain" />
+                android:text="@string/user_id_explain"/>
         </LinearLayout>
 
-        <TextView style="@style/divide_line" />
+        <TextView style="@style/divide_line"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,13 +75,13 @@
                 <TextView
                     android:id="@+id/user_gender_explain"
                     style="@style/user_small_text"
-                    android:text="性别" />
+                    android:text="性别"/>
 
                 <ImageView
                     android:id="@+id/user_gender_arrow"
                     style="@style/user_arrow_image"
                     android:layout_marginStart="30dp"
-                    android:src="@drawable/system_item_arrow" />
+                    android:src="@drawable/system_item_arrow"/>
 
 
                 <RadioGroup
@@ -94,16 +94,16 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:checked="true"
                         android:id="@+id/user_male_rb"
                         style="@style/user_radio_button"
-                        android:text="男" />
+                        android:checked="true"
+                        android:text="男"/>
 
                     <RadioButton
                         android:id="@+id/user_female_rb"
                         style="@style/user_radio_button"
                         android:layout_marginStart="10dp"
-                        android:text="女" />
+                        android:text="女"/>
 
                 </RadioGroup>
 
@@ -111,10 +111,10 @@
 
             <TextView
                 style="@style/user_explain_text"
-                android:text="@string/user_gender_explain" />
+                android:text="@string/user_gender_explain"/>
         </LinearLayout>
 
-        <TextView style="@style/divide_line" />
+        <TextView style="@style/divide_line"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -128,28 +128,28 @@
                 <TextView
                     android:id="@+id/user_height_explain"
                     style="@style/user_small_text"
-                    android:text="身高" />
+                    android:text="身高"/>
 
                 <ImageView
                     android:id="@+id/user_height_arrow"
                     style="@style/user_arrow_image"
                     android:layout_marginStart="30dp"
-                    android:src="@drawable/system_item_arrow" />
+                    android:src="@drawable/system_item_arrow"/>
 
                 <TextView
                     android:id="@+id/user_height_tv"
                     style="@style/user_small_text"
                     android:layout_toStartOf="@id/user_height_arrow"
-                    android:text="172cm" />
+                    android:text="172cm"/>
 
             </RelativeLayout>
 
             <TextView
                 style="@style/user_explain_text"
-                android:text="@string/user_height_explain" />
+                android:text="@string/user_height_explain"/>
         </LinearLayout>
 
-        <TextView style="@style/divide_line" />
+        <TextView style="@style/divide_line"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -163,32 +163,32 @@
                 <TextView
                     android:id="@+id/user_birthday_explain"
                     style="@style/user_small_text"
-                    android:text="生日" />
+                    android:text="生日"/>
 
                 <ImageView
                     android:id="@+id/user_birthday_arrow"
                     style="@style/user_arrow_image"
                     android:layout_marginStart="30dp"
-                    android:src="@drawable/system_item_arrow" />
+                    android:src="@drawable/system_item_arrow"/>
 
                 <TextView
                     android:id="@+id/user_birthday_tv"
                     style="@style/user_small_text"
-                    android:layout_toStartOf="@id/user_birthday_arrow" />
+                    android:layout_toStartOf="@id/user_birthday_arrow"/>
 
             </RelativeLayout>
 
             <TextView
                 style="@style/user_explain_text"
-                android:text="@string/user_birthday_explain" />
+                android:text="@string/user_birthday_explain"/>
         </LinearLayout>
 
         <TextView
             style="@style/user_big_text"
             android:layout_marginTop="30dp"
-            android:text="蓝牙相关设置" />
+            android:text="蓝牙相关设置"/>
 
-        <TextView style="@style/divide_line" />
+        <TextView style="@style/divide_line"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -202,7 +202,7 @@
                 <TextView
                     android:id="@+id/ble_scan_explain"
                     style="@style/user_small_text"
-                    android:text="扫描模式" />
+                    android:text="扫描模式"/>
 
                 <RadioGroup
                     android:id="@+id/ble_scan_grp"
@@ -215,26 +215,97 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:checked="true"
                         android:id="@+id/ble_scan_first_time"
                         style="@style/user_radio_button"
-                        android:text="首次" />
+                        android:checked="true"
+                        android:text="首次"/>
 
                     <RadioButton
                         android:id="@+id/ble_scan_every_time"
                         style="@style/user_radio_button"
                         android:layout_marginStart="10dp"
-                        android:text="每次" />
+                        android:text="每次"/>
                 </RadioGroup>
 
             </RelativeLayout>
 
             <TextView
                 style="@style/user_explain_text"
-                android:text="@string/ble_scan_explain" />
+                android:text="@string/ble_scan_explain"/>
         </LinearLayout>
 
-        <TextView style="@style/divide_line" />
+        <TextView style="@style/divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/scan_timeTv"
+                    style="@style/user_small_text"
+                    android:text="扫描时间（ms）"/>
+
+                <ImageView
+                    style="@style/user_arrow_image"
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/system_item_arrow"/>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/scan_timeEt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edittext_background"
+                android:hint="@string/scan_time_remind"
+                android:inputType="number"
+                android:text="0"/>
+
+            <TextView style="@style/divide_line"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/scan_out_timeTv"
+                    style="@style/user_small_text"
+                    android:text="扫描超时时间（ms）"/>
+
+                <ImageView
+                    style="@style/user_arrow_image"
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/system_item_arrow"/>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/scan_out_timeEt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edittext_background"
+                android:hint="@string/scan_out_time_remind"
+                android:inputType="number"
+                android:text="6000"/>
+
+            <TextView style="@style/divide_line"/>
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -248,7 +319,7 @@
                 <TextView
                     android:id="@+id/user_unit_explain"
                     style="@style/user_small_text"
-                    android:text="重量单位" />
+                    android:text="重量单位"/>
 
                 <RadioGroup
                     android:id="@+id/user_unit_grp"
@@ -261,39 +332,39 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:checked="true"
                         android:id="@+id/user_unit_kg"
                         style="@style/user_radio_button"
+                        android:checked="true"
                         android:paddingStart="4dp"
-                        android:text="kg" />
+                        android:text="kg"/>
 
                     <RadioButton
                         android:id="@+id/user_unit_lb"
                         style="@style/user_radio_button"
                         android:layout_marginStart="4dp"
                         android:paddingStart="4dp"
-                        android:text="lb" />
+                        android:text="lb"/>
 
                     <RadioButton
                         android:id="@+id/user_unit_jin"
                         style="@style/user_radio_button"
                         android:layout_marginStart="4dp"
                         android:paddingStart="4dp"
-                        android:text="斤" />
+                        android:text="斤"/>
 
                     <RadioButton
                         android:id="@+id/user_unit_st"
                         style="@style/user_radio_button"
                         android:layout_marginStart="4dp"
                         android:paddingStart="4dp"
-                        android:text="st" />
+                        android:text="st"/>
                 </RadioGroup>
 
             </RelativeLayout>
 
             <TextView
                 style="@style/user_explain_text"
-                android:text="@string/user_unit_explain" />
+                android:text="@string/user_unit_explain"/>
         </LinearLayout>
 
         <Button
@@ -303,7 +374,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:text="确 定"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
     </LinearLayout>
 
 </ScrollView>
