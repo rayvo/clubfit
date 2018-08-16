@@ -15,4 +15,6 @@
     <string name="RegisterViewController_lowAge10">您的年龄小于10岁,测试时您无法获取准确的测量数据</string>
     <string name="date_format_day">yyyy-MM-dd</string>
     <string name="register_ok">确认</string>
+    <string name="scan_out_time_remind">设置时间后，在指定时间内没有扫描到任何蓝牙设备，会回调错误信息</string>
+    <string name="scan_time_remind">扫描持续时间,单位 ms，默认为0，即一直进行扫描，除非APP调用了stopBleDeviceDiscovery.不为0时，最小值为 3000ms 则会延时 duration ms的时间后，自动停止扫描。</string>
 </resources>
