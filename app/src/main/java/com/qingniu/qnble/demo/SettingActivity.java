@@ -19,6 +19,7 @@ import com.qingniu.qnble.demo.picker.HeightPickerDialog;
 import com.qingniu.qnble.demo.util.DateUtils;
 import com.qingniu.qnble.demo.util.ToastMaker;
 import com.qingniu.qnble.demo.view.ScanActivity;
+import com.qingniu.qnble.demo.view.SystemScanActivity;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
 
 import java.util.Date;
@@ -65,6 +66,8 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
     RadioGroup mUserUnitGrp;
     @BindView(R.id.btn_sure)
     Button mSure;
+    @BindView(R.id.btn_system_scan)
+    Button btn_system_scan;
 
     @BindView(R.id.scan_timeEt)
     EditText mScanEt;
@@ -113,6 +116,7 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
         mUserHeightTv.setOnClickListener(this);
         mUserBirthdayTv.setOnClickListener(this);
         mSure.setOnClickListener(this);
+        btn_system_scan.setOnClickListener(this);
     }
 
     @Override
@@ -187,56 +191,66 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
                         .build().show();
                 break;
             case R.id.btn_sure:
-                String userId = mUserIdEdt.getText().toString().trim();
-                int scanTime = 0;
-                try {
-                    scanTime = Integer.parseInt(mScanEt.getText().toString().trim());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    ToastMaker.show(this, "请填写正确的扫描时间");
-                    return;
-                }
-                long scanOutTime = 0L;
-                try {
-                    scanOutTime = Long.parseLong(mScanOutEt.getText().toString().trim());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    ToastMaker.show(this, "请填写正确的扫描超时时间");
-                    return;
-                }
-
-                if (userId.isEmpty()) {
-                    ToastMaker.show(this, "用户id不能为空");
-                    return;
-                } else if (mUserGenderGrp.getCheckedRadioButtonId() == -1) {
-                    ToastMaker.show(this, "请选择性别");
-                    return;
-                } else if (mHeight == 0) {
-                    ToastMaker.show(this, "请输入身高");
-                    return;
-                } else if (mBirthday == null) {
-                    ToastMaker.show(this, "请输入出生日期");
-                    return;
-                } else if (mBleScanGrp.getCheckedRadioButtonId() == -1) {
-                    ToastMaker.show(this, "请选择蓝牙扫描模式");
-                    return;
-                } else if (mUserUnitGrp.getCheckedRadioButtonId() == -1) {
-                    ToastMaker.show(this, "请选择重量单位");
-                    return;
-                }
-
-                mUser.setUserId(userId);
-                mUser.setHeight(mHeight);
-                mUser.setGender(mGender);
-                mUser.setBirthDay(mBirthday);
-
-                mBleConfig.setDuration(scanTime);
-                mBleConfig.setScanOutTime(scanOutTime);
+                if (checkInfo()) return;
 
                 startActivity(ScanActivity.getCallIntent(this, mUser, mBleConfig));
+                finish();
+                break;
+            case R.id.btn_system_scan:
+                if (checkInfo()) return;
+
+                startActivity(SystemScanActivity.getCallIntent(this, mUser));
                 finish();
                 break;
         }
     }
 
+    private boolean checkInfo() {
+        String userId = mUserIdEdt.getText().toString().trim();
+        int scanTime = 0;
+        try {
+            scanTime = Integer.parseInt(mScanEt.getText().toString().trim());
+        } catch (Exception e) {
+            e.printStackTrace();
+            ToastMaker.show(this, "请填写正确的扫描时间");
+            return true;
+        }
+        long scanOutTime = 0L;
+        try {
+            scanOutTime = Long.parseLong(mScanOutEt.getText().toString().trim());
+        } catch (Exception e) {
+            e.printStackTrace();
+            ToastMaker.show(this, "请填写正确的扫描超时时间");
+            return true;
+        }
+
+        if (userId.isEmpty()) {
+            ToastMaker.show(this, "用户id不能为空");
+            return true;
+        } else if (mUserGenderGrp.getCheckedRadioButtonId() == -1) {
+            ToastMaker.show(this, "请选择性别");
+            return true;
+        } else if (mHeight == 0) {
+            ToastMaker.show(this, "请输入身高");
+            return true;
+        } else if (mBirthday == null) {
+            ToastMaker.show(this, "请输入出生日期");
+            return true;
+        } else if (mBleScanGrp.getCheckedRadioButtonId() == -1) {
+            ToastMaker.show(this, "请选择蓝牙扫描模式");
+            return true;
+        } else if (mUserUnitGrp.getCheckedRadioButtonId() == -1) {
+            ToastMaker.show(this, "请选择重量单位");
+            return true;
+        }
+
+        mUser.setUserId(userId);
+        mUser.setHeight(mHeight);
+        mUser.setGender(mGender);
+        mUser.setBirthDay(mBirthday);
+
+        mBleConfig.setDuration(scanTime);
+        mBleConfig.setScanOutTime(scanOutTime);
+        return false;
+    }
 }

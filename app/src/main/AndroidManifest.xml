@@ -35,6 +35,9 @@
         <activity android:name=".view.ScanActivity"
                   android:screenOrientation="portrait"/>
 
+        <activity android:name=".view.SystemScanActivity"
+                  android:screenOrientation="portrait"/>
+
         <activity android:name=".view.ConnectActivity"
                   android:screenOrientation="portrait"/>
 

@@ -57,7 +57,6 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
     private QNBleApi mQNBleApi;
     private User mUser;
     private Config mConfig;
-    private QNConfig mQnConfig;
     private boolean isScanning;
 
     public static Intent getCallIntent(Context context, User user, Config mConfig) {
@@ -150,7 +149,7 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void initData() {
-        mQnConfig = mQNBleApi.getConfig();//获取上次设置的对象,未设置获取的是默认对象
+        QNConfig mQnConfig = mQNBleApi.getConfig();//获取上次设置的对象,未设置获取的是默认对象
         mQnConfig.setAllowDuplicates(mConfig.isAllowDuplicates());
         mQnConfig.setDuration(mConfig.getDuration());
         mQnConfig.setScanOutTime(mConfig.getScanOutTime());
