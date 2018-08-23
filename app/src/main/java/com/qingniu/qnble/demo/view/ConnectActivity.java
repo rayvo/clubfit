@@ -83,6 +83,10 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
 
     private void initData() {
         initIntent();
+        /**
+         * SDK中的数据以及状态监听，如果不使用一定需要设置为null；
+         * 否则下次设置监听，即使是使用的同一个对象，也会回调多次
+         * */
         initBleConnectStatus();
         initUserData(); //设置数据监听器,返回数据,需在连接当前设备前设置
         //已经连接设备先断开设备,再连接
@@ -140,7 +144,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void connectQnDevice(QNBleDevice device) {
-        mQNBleApi.connectDevice(device, creatQNuser(), new QNResultCallback() {
+        mQNBleApi.connectDevice(device, createQNUser(), new QNResultCallback() {
             @Override
             public void onResult(int code, String msg) {
                 Log.d("ConnectActivity", "连接设备返回:" + msg);
@@ -148,7 +152,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
         });
     }
 
-    private QNUser creatQNuser() {
+    private QNUser createQNUser() {
         return mQNBleApi.buildUser(mUser.getUserId(),
                 mUser.getHeight(), mUser.getGender(), mUser.getBirthDay(), new QNResultCallback() {
                     @Override
@@ -178,7 +182,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
                 Log.d("ConnectActivity", "收到存储数据");
                 if (storedDataList != null && storedDataList.size() > 0) {
                     QNScaleStoreData data = storedDataList.get(0);
-                    QNUser qnUser = creatQNuser();
+                    QNUser qnUser = createQNUser();
                     data.setUser(qnUser);
                     QNScaleData qnScaleData = data.generateScaleData();
                     onReceiveScaleData(qnScaleData);
@@ -354,7 +358,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
         if (mBleDevice == null || mUser == null) {
             return;
         }
-        mQNBleApi.connectDevice(mBleDevice, creatQNuser(), new QNResultCallback() {
+        mQNBleApi.connectDevice(mBleDevice, createQNUser(), new QNResultCallback() {
             @Override
             public void onResult(int code, String msg) {
                 Log.d("ConnectActivity", "连接设备返回:" + msg);
