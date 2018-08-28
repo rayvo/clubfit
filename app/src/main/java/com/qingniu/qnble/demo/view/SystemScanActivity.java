@@ -59,10 +59,12 @@ public class SystemScanActivity extends AppCompatActivity implements AdapterView
 
     private QNBleApi mQNBleApi;
     private User mUser;
+    private Config mConfig;
     private boolean isScanning;
 
-    public static Intent getCallIntent(Context context, User user) {
+    public static Intent getCallIntent(Context context, User user, Config config) {
         return new Intent(context, SystemScanActivity.class)
+                .putExtra(UserConst.CONFIG, config)
                 .putExtra(UserConst.USER, user);
     }
 
@@ -116,6 +118,7 @@ public class SystemScanActivity extends AppCompatActivity implements AdapterView
 
         mQNBleApi = QNBleApi.getInstance(this);
         mUser = getIntent().getParcelableExtra(UserConst.USER);
+        mConfig = getIntent().getParcelableExtra(UserConst.CONFIG);
         initData();
         //动态申请权限(Android6.0以后需要)
         AndroidPermissionCenter.verifyPermissions(this);
@@ -128,6 +131,21 @@ public class SystemScanActivity extends AppCompatActivity implements AdapterView
     }
 
     private void initData() {
+        QNConfig mQnConfig = mQNBleApi.getConfig();//获取上次设置的对象,未设置获取的是默认对象
+        mQnConfig.setAllowDuplicates(mConfig.isAllowDuplicates());
+        mQnConfig.setDuration(mConfig.getDuration());
+        mQnConfig.setScanOutTime(mConfig.getScanOutTime());
+        mQnConfig.setConnectOutTime(mConfig.getConnectOutTime());
+        mQnConfig.setUnit(mConfig.getUnit());
+        mQnConfig.setOnlyScreenOn(mConfig.isOnlyScreenOn());
+        //设置扫描对象
+        mQnConfig.save(new QNResultCallback() {
+            @Override
+            public void onResult(int i, String s) {
+                Log.d("ScanActivity", "initData:" + s);
+            }
+        });
+
         mScanAppid.setText("UserId : " + mUser.getUserId());
     }
 

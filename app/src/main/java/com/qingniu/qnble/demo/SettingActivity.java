@@ -73,6 +73,8 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
     EditText mScanEt;
     @BindView(R.id.scan_out_timeEt)
     EditText mScanOutEt;
+    @BindView(R.id.connect_out_timeEt)
+    EditText mConnectOutEt;
 
     private Config mBleConfig; //蓝牙配置对象
     private String mGender = "male";//用户性别
@@ -199,7 +201,7 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
             case R.id.btn_system_scan:
                 if (checkInfo()) return;
 
-                startActivity(SystemScanActivity.getCallIntent(this, mUser));
+                startActivity(SystemScanActivity.getCallIntent(this, mUser, mBleConfig));
                 finish();
                 break;
         }
@@ -221,6 +223,15 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
         } catch (Exception e) {
             e.printStackTrace();
             ToastMaker.show(this, "请填写正确的扫描超时时间");
+            return true;
+        }
+
+        long connectOutTime = 0L;
+        try {
+            connectOutTime = Long.parseLong(mConnectOutEt.getText().toString().trim());
+        } catch (Exception e) {
+            e.printStackTrace();
+            ToastMaker.show(this, "请填写正确的连接超时时间");
             return true;
         }
 
@@ -251,6 +262,7 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
 
         mBleConfig.setDuration(scanTime);
         mBleConfig.setScanOutTime(scanOutTime);
+        mBleConfig.setConnectOutTime(connectOutTime);
         return false;
     }
 }

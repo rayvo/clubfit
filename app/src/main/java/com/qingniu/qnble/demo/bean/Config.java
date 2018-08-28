@@ -57,6 +57,16 @@ public class Config implements Parcelable {
 
     private long scanOutTime=6000;
 
+    public long getConnectOutTime() {
+        return connectOutTime;
+    }
+
+    public void setConnectOutTime(long connectOutTime) {
+        this.connectOutTime = connectOutTime;
+    }
+
+    private long connectOutTime=10000;
+
     public Config() {
     }
 
@@ -72,6 +82,7 @@ public class Config implements Parcelable {
         dest.writeInt(this.duration);
         dest.writeInt(this.unit);
         dest.writeLong(this.scanOutTime);
+        dest.writeLong(this.connectOutTime);
     }
 
     protected Config(Parcel in) {
@@ -80,6 +91,7 @@ public class Config implements Parcelable {
         this.duration = in.readInt();
         this.unit = in.readInt();
         this.scanOutTime = in.readLong();
+        this.connectOutTime = in.readLong();
     }
 
     public static final Creator<Config> CREATOR = new Creator<Config>() {

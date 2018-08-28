@@ -13,10 +13,12 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.qingniu.qnble.demo.R;
 import com.qingniu.qnble.demo.bean.User;
 import com.qingniu.qnble.demo.util.UserConst;
+import com.yolanda.health.qnblesdk.constant.CheckStatus;
 import com.yolanda.health.qnblesdk.constant.QNIndicator;
 import com.yolanda.health.qnblesdk.constant.QNScaleStatus;
 import com.yolanda.health.qnblesdk.listener.QNBleConnectionChangeListener;
@@ -132,6 +134,9 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onConnectError(QNBleDevice device, int errorCode) {
                 setBleStatus(QNScaleStatus.STATE_DISCONNECTING);
+                if (errorCode == CheckStatus.ERROR_BLE_CONNECT_OVERTIME.getCode()) {
+                    Toast.makeText(ConnectActivity.this, "连接设备超时", Toast.LENGTH_SHORT).show();
+                }
             }
 
             //测量过程中的连接状态

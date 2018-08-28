@@ -153,6 +153,7 @@ public class ScanActivity extends AppCompatActivity implements AdapterView.OnIte
         mQnConfig.setAllowDuplicates(mConfig.isAllowDuplicates());
         mQnConfig.setDuration(mConfig.getDuration());
         mQnConfig.setScanOutTime(mConfig.getScanOutTime());
+        mQnConfig.setConnectOutTime(mConfig.getConnectOutTime());
         mQnConfig.setUnit(mConfig.getUnit());
         mQnConfig.setOnlyScreenOn(mConfig.isOnlyScreenOn());
         //设置扫描对象
