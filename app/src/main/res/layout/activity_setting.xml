@@ -126,6 +126,59 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/user_calc_explain"
+                    style="@style/user_small_text"
+                    android:text="算法模式"/>
+
+                <ImageView
+                    android:id="@+id/user_calc_arrow"
+                    style="@style/user_arrow_image"
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/system_item_arrow"/>
+
+
+                <RadioGroup
+                    android:id="@+id/user_calc_grp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_toStartOf="@id/user_calc_arrow"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/normal_calc_rb"
+                        style="@style/user_radio_button"
+                        android:checked="true"
+                        android:text="普通模式"/>
+
+                    <RadioButton
+                        android:id="@+id/athlete_calc_rb"
+                        style="@style/user_radio_button"
+                        android:layout_marginStart="10dp"
+                        android:text="运动员模式"/>
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/user_explain_text"
+                android:text="运动员模式，适用于经常运动的用户"/>
+        </LinearLayout>
+
+        <TextView style="@style/divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
                     android:id="@+id/user_height_explain"
                     style="@style/user_small_text"
                     android:text="身高"/>

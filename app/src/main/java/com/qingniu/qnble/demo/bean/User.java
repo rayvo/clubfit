@@ -30,6 +30,12 @@ public class User implements Parcelable {
      * 超过这个范围的，等于上限或下限
      */
     private Date birthDay;
+    /**
+     * 设置使用算法的类型；
+     * 1表示运动员算法，0是普通算法
+     * 当用户年龄小于18岁时，即使设置为运动员模式，也是使用普通模式
+     */
+    private int athleteType;
 
     public String getUserId() {
         return userId;
@@ -63,6 +69,17 @@ public class User implements Parcelable {
         this.birthDay = birthDay;
     }
 
+    public User() {
+    }
+
+    public int getAthleteType() {
+        return athleteType;
+    }
+
+    public void setAthleteType(int athleteType) {
+        this.athleteType = athleteType;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -74,9 +91,7 @@ public class User implements Parcelable {
         dest.writeInt(this.height);
         dest.writeString(this.gender);
         dest.writeLong(this.birthDay != null ? this.birthDay.getTime() : -1);
-    }
-
-    public User() {
+        dest.writeInt(this.athleteType);
     }
 
     protected User(Parcel in) {
@@ -85,9 +100,10 @@ public class User implements Parcelable {
         this.gender = in.readString();
         long tmpBirthDay = in.readLong();
         this.birthDay = tmpBirthDay == -1 ? null : new Date(tmpBirthDay);
+        this.athleteType = in.readInt();
     }
 
-    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+    public static final Creator<User> CREATOR = new Creator<User>() {
         @Override
         public User createFromParcel(Parcel source) {
             return new User(source);

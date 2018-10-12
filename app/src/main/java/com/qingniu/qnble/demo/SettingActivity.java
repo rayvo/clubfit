@@ -20,6 +20,7 @@ import com.qingniu.qnble.demo.util.DateUtils;
 import com.qingniu.qnble.demo.util.ToastMaker;
 import com.qingniu.qnble.demo.view.ScanActivity;
 import com.qingniu.qnble.demo.view.SystemScanActivity;
+import com.yolanda.health.qnblesdk.constant.QNInfoConst;
 import com.yolanda.health.qnblesdk.out.QNBleApi;
 
 import java.util.Date;
@@ -60,6 +61,8 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
     RadioButton mUserUnitSt;
     @BindView(R.id.user_gender_grp)
     RadioGroup mUserGenderGrp;
+    @BindView(R.id.user_calc_grp)
+    RadioGroup mUserCalcGrp;
     @BindView(R.id.ble_scan_grp)
     RadioGroup mBleScanGrp;
     @BindView(R.id.user_unit_grp)
@@ -113,6 +116,7 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
 
     private void initListener() {
         mUserGenderGrp.setOnCheckedChangeListener(this);
+        mUserCalcGrp.setOnCheckedChangeListener(this);
         mBleScanGrp.setOnCheckedChangeListener(this);
         mUserUnitGrp.setOnCheckedChangeListener(this);
         mUserHeightTv.setOnClickListener(this);
@@ -129,6 +133,12 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
                 break;
             case R.id.user_female_rb:
                 mGender = "female";
+                break;
+            case R.id.normal_calc_rb:
+                mUser.setAthleteType(QNInfoConst.CALC_NORMAL);
+                break;
+            case R.id.athlete_calc_rb:
+                mUser.setAthleteType(QNInfoConst.CALC_ATHLETE);
                 break;
             case R.id.ble_scan_first_time:
                 //每个设备单次扫描只返回一次

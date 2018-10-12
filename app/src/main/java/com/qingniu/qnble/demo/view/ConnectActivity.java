@@ -159,7 +159,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
 
     private QNUser createQNUser() {
         return mQNBleApi.buildUser(mUser.getUserId(),
-                mUser.getHeight(), mUser.getGender(), mUser.getBirthDay(), new QNResultCallback() {
+                mUser.getHeight(), mUser.getGender(), mUser.getBirthDay(), mUser.getAthleteType(), new QNResultCallback() {
                     @Override
                     public void onResult(int code, String msg) {
                         Log.d("ConnectActivity", "创建用户信息返回:" + msg);
