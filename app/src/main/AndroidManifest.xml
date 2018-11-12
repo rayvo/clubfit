@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qingniu.qnble.demo">
+          package="com.qingniu.qnble.demo">
 
     <!--SDK中需要的权限-->
     <!--23之后的蓝牙需要添加以下权限,且需要动态申请-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!--读写文件权限-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!--网络权限-->
@@ -22,28 +23,32 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingActivity"
-                  android:theme="@style/timePickerActivity"
-                  android:screenOrientation="portrait">
+        <activity
+            android:name=".SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/timePickerActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.ScanActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.ScanActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".view.SystemScanActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.SystemScanActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".view.ConnectActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.ConnectActivity"
+            android:screenOrientation="portrait"/>
 
-        <!--SD中需要申请的服务-->
-        <service android:name="com.qingniu.qnble.scanner.BleScanService" />
-        <service android:name="com.qingniu.scale.ble.ScaleBleService" />
+        <!--SDK中需要申请的服务-->
+        <service android:name="com.qingniu.qnble.scanner.BleScanService"/>
+        <service android:name="com.qingniu.scale.ble.ScaleBleService"/>
     </application>
 
 </manifest>
