@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="测量"
+            android:text="Measuring"
             android:textSize="16sp"/>
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
-            android:text="设置"
+            android:text="Settings"
             android:textSize="16sp"/>
     </RelativeLayout>
 
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="点击连接设备"/>
+            android:text="Click to connect device"/>
 
     </LinearLayout>
 
@@ -82,7 +82,7 @@
             android:layout_marginStart="20dp"
             android:layout_weight="2"
             android:gravity="center_horizontal"
-            android:text="名称"/>
+            android:text="Name"/>
 
         <TextView
             android:id="@+id/modelTv"
@@ -92,7 +92,7 @@
             android:layout_marginStart="20dp"
             android:layout_weight="2"
             android:gravity="center_horizontal"
-            android:text="型号"/>
+            android:text="Model"/>
 
         <TextView
             android:id="@+id/macTv"
@@ -102,7 +102,7 @@
             android:layout_marginStart="20dp"
             android:layout_weight="4"
             android:gravity="center_horizontal"
-            android:text="mac地址"/>
+            android:text="Mac address"/>
 
         <TextView
             android:id="@+id/rssiTv"
@@ -112,7 +112,7 @@
             android:layout_marginStart="20dp"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="强度"/>
+            android:text="Strength"/>
 
         <ImageView
             android:layout_width="wrap_content"

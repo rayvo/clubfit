@@ -13,12 +13,12 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:gravity="center"
-            android:text="设置"
+            android:text="Settings"
             android:textSize="20sp"/>
 
         <TextView
             style="@style/user_big_text"
-            android:text="用户资料"/>
+            android:text="User Information"/>
 
         <TextView style="@style/divide_line"/>
 
@@ -34,7 +34,7 @@
                 <TextView
                     android:id="@+id/user_name_explain"
                     style="@style/user_small_text"
-                    android:text="用户id"/>
+                    android:text="User ID"/>
 
                 <ImageView
                     android:id="@+id/user_id_arrow"
@@ -51,7 +51,7 @@
                     android:layout_toStartOf="@+id/user_id_arrow"
                     android:background="@drawable/edittext_background"
                     android:inputType="phone"
-                    android:text="123456789"/>
+                    android:hint="010-8881-8687"/>
 
 
             </RelativeLayout>
@@ -75,7 +75,7 @@
                 <TextView
                     android:id="@+id/user_gender_explain"
                     style="@style/user_small_text"
-                    android:text="性别"/>
+                    android:text="Gender"/>
 
                 <ImageView
                     android:id="@+id/user_gender_arrow"
@@ -97,13 +97,13 @@
                         android:id="@+id/user_male_rb"
                         style="@style/user_radio_button"
                         android:checked="true"
-                        android:text="男"/>
+                        android:text="Male"/>
 
                     <RadioButton
                         android:id="@+id/user_female_rb"
                         style="@style/user_radio_button"
                         android:layout_marginStart="10dp"
-                        android:text="女"/>
+                        android:text="Female"/>
 
                 </RadioGroup>
 
@@ -128,7 +128,7 @@
                 <TextView
                     android:id="@+id/user_calc_explain"
                     style="@style/user_small_text"
-                    android:text="算法模式"/>
+                    android:text="Mode"/>
 
                 <ImageView
                     android:id="@+id/user_calc_arrow"
@@ -150,13 +150,13 @@
                         android:id="@+id/normal_calc_rb"
                         style="@style/user_radio_button"
                         android:checked="true"
-                        android:text="普通模式"/>
+                        android:text="Normal mode"/>
 
                     <RadioButton
                         android:id="@+id/athlete_calc_rb"
                         style="@style/user_radio_button"
                         android:layout_marginStart="10dp"
-                        android:text="运动员模式"/>
+                        android:text="Athlete mode"/>
 
                 </RadioGroup>
 
@@ -164,7 +164,7 @@
 
             <TextView
                 style="@style/user_explain_text"
-                android:text="运动员模式，适用于经常运动的用户"/>
+                android:text="Athlete mode for regular sports users"/>
         </LinearLayout>
 
         <TextView style="@style/divide_line"/>
@@ -181,7 +181,7 @@
                 <TextView
                     android:id="@+id/user_height_explain"
                     style="@style/user_small_text"
-                    android:text="身高"/>
+                    android:text="Height"/>
 
                 <ImageView
                     android:id="@+id/user_height_arrow"
@@ -216,7 +216,7 @@
                 <TextView
                     android:id="@+id/user_birthday_explain"
                     style="@style/user_small_text"
-                    android:text="生日"/>
+                    android:text="Day of Birth"/>
 
                 <ImageView
                     android:id="@+id/user_birthday_arrow"
@@ -239,7 +239,7 @@
         <TextView
             style="@style/user_big_text"
             android:layout_marginTop="30dp"
-            android:text="蓝牙相关设置"/>
+            android:text="Bluetooth Settings"/>
 
         <TextView style="@style/divide_line"/>
 
@@ -255,7 +255,7 @@
                 <TextView
                     android:id="@+id/ble_scan_explain"
                     style="@style/user_small_text"
-                    android:text="扫描模式"/>
+                    android:text="Scan mode"/>
 
                 <RadioGroup
                     android:id="@+id/ble_scan_grp"
@@ -271,13 +271,13 @@
                         android:id="@+id/ble_scan_first_time"
                         style="@style/user_radio_button"
                         android:checked="true"
-                        android:text="首次"/>
+                        android:text="First Time"/>
 
                     <RadioButton
                         android:id="@+id/ble_scan_every_time"
                         style="@style/user_radio_button"
                         android:layout_marginStart="10dp"
-                        android:text="每次"/>
+                        android:text="Everytime"/>
                 </RadioGroup>
 
             </RelativeLayout>
@@ -301,7 +301,7 @@
                 <TextView
                     android:id="@+id/scan_timeTv"
                     style="@style/user_small_text"
-                    android:text="扫描时间（ms）"/>
+                    android:text="Scan time（ms）"/>
 
                 <ImageView
                     style="@style/user_arrow_image"
@@ -336,7 +336,7 @@
                 <TextView
                     android:id="@+id/scan_out_timeTv"
                     style="@style/user_small_text"
-                    android:text="扫描超时时间（ms）"/>
+                    android:text="Scan timeout（ms）"/>
 
                 <ImageView
                     style="@style/user_arrow_image"
@@ -371,7 +371,7 @@
                 <TextView
                     android:id="@+id/connect_out_timeTv"
                     style="@style/user_small_text"
-                    android:text="连接超时时间（ms）"/>
+                    android:text="Connection timeout（ms）"/>
 
                 <ImageView
                     style="@style/user_arrow_image"
@@ -407,7 +407,7 @@
                 <TextView
                     android:id="@+id/user_unit_explain"
                     style="@style/user_small_text"
-                    android:text="重量单位"/>
+                    android:text="Weight unit"/>
 
                 <RadioGroup
                     android:id="@+id/user_unit_grp"
@@ -438,7 +438,7 @@
                         style="@style/user_radio_button"
                         android:layout_marginStart="4dp"
                         android:paddingStart="4dp"
-                        android:text="斤"/>
+                        android:text="Jin"/>
 
                     <RadioButton
                         android:id="@+id/user_unit_st"
@@ -455,23 +455,31 @@
                 android:text="@string/user_unit_explain"/>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_sure"
-            android:layout_width="120dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:text="确 定"
-            android:textSize="18sp"/>
+            android:orientation="horizontal"
+            android:layout_marginLeft="35dp">
+            <Button
+                android:id="@+id/btn_sure"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:text="Determine"
+                android:textSize="18sp"/>
 
-        <Button
-            android:id="@+id/btn_system_scan"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:text="系统扫描"
-            android:textSize="18sp"/>
+            <Button
+                android:id="@+id/btn_system_scan"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:text="System scan"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+
     </LinearLayout>
 
 </ScrollView>

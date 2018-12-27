@@ -1,20 +1,40 @@
 <resources>
     <string name="app_name">QNBleDemo</string>
-    <string name="scan">扫描</string>
-    <string name="stop">停止</string>
-    <string name="user_id_explain">设置用户的资料,计算体脂率时会需要</string>
-    <string name="user_gender_explain">男的为"male",女的为"female"</string>
-    <string name="user_height_explain">单位是cm,范围为40~240cm</string>
-    <string name="user_birthday_explain">只支持10岁以上80岁以下,对于10岁以下的,则只有体重和BMI数据是有效的</string>
-    <string name="ble_scan_explain">选择"首次"时,每个设备单次扫描只返回一次,选择"每次"时,每个设备单次扫描可能会回调多次,不过信号强度会不同</string>
-    <string name="user_unit_explain">kg 公斤 默认值\nlb 磅,所有秤都能支持这个单位\n斤,秤端如果不支持,则会显示kg\nst 英石,如果秤端不支持会显示lb</string>
-    <string name="cancel">取消</string>
-    <string name="sure">确定</string>
-    <string name="RegisterViewController_women">女</string>
-    <string name="RegisterViewController_man">男</string>
-    <string name="RegisterViewController_lowAge10">您的年龄小于10岁,测试时您无法获取准确的测量数据</string>
+    <string name="scan">Scan</string>
+    <string name="stop">Stop</string>
+    <string name="user_id_explain">Set the user profile to calculate the body index</string>
+    <string name="user_gender_explain">Male or Female</string>
+    <string name="user_height_explain">Unit in cm (range 40~240cm)</string>
+    <string name="user_birthday_explain">Only support people whose age is from 10 to 80 years old. If age is less then 10, only weight and BMI data are valid</string>
+    <string name="ble_scan_explain">When "First Time" is selected, each device will only return once in a single scan. When "Everytime" is selected, each device may be called multiple time in a single scan, but the signal strength will be different.</string>
+    <string name="user_unit_explain">Kg is the default unit, all scales can support this unit. If the scale does not support, it will display lb</string>
+    <string name="cancel">Cancel</string>
+    <string name="sure">Sure</string>
+    <string name="RegisterViewController_women">Female</string>
+    <string name="RegisterViewController_man">Male</string>
+    <string name="RegisterViewController_lowAge10">If your age is less then 10, you cannot get accurate measurement data when testing</string>
     <string name="date_format_day">yyyy-MM-dd</string>
-    <string name="register_ok">确认</string>
-    <string name="scan_out_time_remind">设置时间后，在指定时间内没有扫描到任何蓝牙设备，会回调错误信息</string>
-    <string name="scan_time_remind">扫描持续时间,单位 ms，默认为0，即一直进行扫描，除非APP调用了stopBleDeviceDiscovery.不为0时，最小值为 3000ms 则会延时 duration ms的时间后，自动停止扫描。</string>
+    <string name="register_ok">Confirm</string>
+    <string name="scan_out_time_remind">After setting the time, if there is no Bluetooth device scanned within the specified time, an error message will be recalled</string>
+    <string name="scan_time_remind">Scan duration (in ms) defaults to 0, that is, scans all the time, unless APP calls stopBleDeviceDiscovery. If it is not 0, the minimum value is 3000ms, the delay will automatically stop after the duration ms time.</string>
+
+    <!--<string name="app_name">QNBleDemo</string>-->
+    <!--<string name="scan">扫描</string>-->
+    <!--<string name="stop">停止</string>-->
+    <!--<string name="user_id_explain">设置用户的资料,计算体脂率时会需要</string>-->
+    <!--<string name="user_gender_explain">男的为"male",女的为"female"</string>-->
+    <!--<string name="user_height_explain">单位是cm,范围为40~240cm</string>-->
+    <!--<string name="user_birthday_explain">只支持10岁以上80岁以下,对于10岁以下的,则只有体重和BMI数据是有效的</string>-->
+    <!--<string name="ble_scan_explain">选择"首次"时,每个设备单次扫描只返回一次,选择"每次"时,每个设备单次扫描可能会回调多次,不过信号强度会不同</string>-->
+    <!--<string name="user_unit_explain">kg 公斤 默认值\nlb 磅,所有秤都能支持这个单位\n斤,秤端如果不支持,则会显示kg\nst 英石,如果秤端不支持会显示lb</string>-->
+    <!--<string name="cancel">取消</string>-->
+    <!--<string name="sure">确定</string>-->
+    <!--<string name="RegisterViewController_women">女</string>-->
+    <!--<string name="RegisterViewController_man">男</string>-->
+    <!--<string name="RegisterViewController_lowAge10">您的年龄小于10岁,测试时您无法获取准确的测量数据</string>-->
+    <!--<string name="date_format_day">yyyy-MM-dd</string>-->
+    <!--<string name="register_ok">确认</string>-->
+    <!--<string name="scan_out_time_remind">设置时间后，在指定时间内没有扫描到任何蓝牙设备，会回调错误信息</string>-->
+    <!--<string name="scan_time_remind">扫描持续时间,单位 ms，默认为0，即一直进行扫描，除非APP调用了stopBleDeviceDiscovery.不为0时，最小值为 3000ms 则会延时 duration ms的时间后，自动停止扫描。</string>-->
+
 </resources>
