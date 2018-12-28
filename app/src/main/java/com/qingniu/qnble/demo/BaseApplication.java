@@ -24,7 +24,7 @@ public class BaseApplication extends Application {
         mQNBleApi.initSdk("123456789", encryptPath, new QNResultCallback() {
             @Override
             public void onResult(int code, String msg) {
-                Log.d("BaseApplication", "初始化文件" + msg);
+                Log.d("BaseApplication", "Initialization file" + msg);
             }
         });
     }

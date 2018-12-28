@@ -231,14 +231,14 @@ public class SystemScanActivity extends AppCompatActivity implements AdapterView
                     listAdapter.notifyDataSetChanged();
                     startScan();
                 } else {
-                    ToastMaker.show(this, "正在扫描");
+                    ToastMaker.show(this, "Scanning");
                 }
                 break;
             case R.id.stopBtn:
                 if (isScanning) {
                     stopScan();
                 } else {
-                    ToastMaker.show(this, "已经停止扫描");
+                    ToastMaker.show(this, "Scanning has stopped");
                 }
                 break;
         }
@@ -251,9 +251,9 @@ public class SystemScanActivity extends AppCompatActivity implements AdapterView
         if (requestCode == AndroidPermissionCenter.REQUEST_EXTERNAL_STORAGE) {
             for (int i = 0; i < permissions.length; i++) {
                 if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "" + "权限" + permissions[i] + "申请成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "" + "Permission" + permissions[i] + "Successful application", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "" + "权限" + permissions[i] + "申请失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "" + "Permission" + permissions[i] + "Application failed", Toast.LENGTH_SHORT).show();
                 }
             }
         }
